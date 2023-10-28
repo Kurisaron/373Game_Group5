@@ -6,13 +6,20 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Inventory : MonoBehaviour
 {
-    private List<(string item, int amount)> heldItems = new List<(string item, int amount)>();
+    private Dictionary<string, int> heldItems = new Dictionary<string, int>();
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Contains("key", StringComparison.CurrentCultureIgnoreCase))
+        if (other.transform.GetBase().gameObject.name.Contains("key", StringComparison.CurrentCultureIgnoreCase))
         {
-            Debug.Log("Key found");
+            //Debug.Log("Key found");
+            heldItems.AddItem("Key");
+            other.transform.GetBase().gameObject.SetActive(false);
+        }
+
+        if (other.transform.GetBase().gameObject.name.Contains("hatch", StringComparison.CurrentCultureIgnoreCase) && heldItems.RemoveItem("Key"))
+        {
+            // Open the hatch
         }
     }
 
