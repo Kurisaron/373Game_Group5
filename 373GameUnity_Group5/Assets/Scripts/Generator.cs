@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class Generator : MonoBehaviour
 {
     [SerializeField] private Slider progressSlider;
-    [SerializeField] private GameObject lights;
+    [SerializeField] OnGenFix onGenFix;
+    
     private (bool isFixed, bool playerNear, Coroutine fixRoutine) status;
     public (bool isFixed, bool playerNear, Coroutine fixRoutine) Status
     {
@@ -33,7 +34,6 @@ public class Generator : MonoBehaviour
 
     private void Awake()
     {
-        lights.SetActive(false);
         Status = (false, false, null);
     }
 
@@ -75,7 +75,7 @@ public class Generator : MonoBehaviour
         GeneratorFixed:
         Debug.Log("Fix routine completed");
         Status = (true, Status.playerNear, null);
-        lights.SetActive(true);
+        onGenFix.onGenFix();
 
     }
 
