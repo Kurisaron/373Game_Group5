@@ -54,6 +54,10 @@ public class Killer : MonoBehaviour
 
         await WaitForClosedHatch(hatch);
 
+        // Make the killer leave the view here
+        Vector3 walkingDirection = -Camera.main.transform.right;
+        MoveKiller(transform.position + (walkingDirection * 10.0f));
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -98,4 +102,5 @@ public class Killer : MonoBehaviour
         }
     }
 
+    
 }

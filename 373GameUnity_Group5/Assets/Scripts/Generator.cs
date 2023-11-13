@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(BoxCollider), typeof(AudioSource))]
 public class Generator : MonoBehaviour
 {
     [SerializeField] private Slider progressSlider;
