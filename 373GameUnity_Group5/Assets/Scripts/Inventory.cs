@@ -17,9 +17,22 @@ public class Inventory : MonoBehaviour
             other.transform.GetBase().gameObject.SetActive(false);
         }
 
-        if (other.transform.GetBase().gameObject.name.Contains("hatch", StringComparison.CurrentCultureIgnoreCase) && heldItems.RemoveItem("Key"))
+        if (other.transform.GetBase().gameObject.name.Contains("hatch", StringComparison.CurrentCultureIgnoreCase))
         {
-            // Open the hatch
+            Hatch hatch = other.transform.GetBase().gameObject.GetComponent<Hatch>();
+            if (hatch == null || hatch.Open)
+            {
+                string message = hatch == null ? "Collided hatch does not have hatch script attached" : "Hatch is already open";
+                Debug.LogError(message);
+                return;
+            }
+            
+            // Collided with hatch
+            if (heldItems.RemoveItem("Key"))
+            {
+                hatch.Open = true;
+            }
+            else Debug.Log("Cannot open the hatch without a key");
         }
     }
 
