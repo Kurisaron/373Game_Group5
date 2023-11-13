@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class Generator : MonoBehaviour
 {
     [SerializeField] private Slider progressSlider;
+    [SerializeField] OnGenFix onGenFix;
+    
     private (bool isFixed, bool playerNear, Coroutine fixRoutine) status;
     public (bool isFixed, bool playerNear, Coroutine fixRoutine) Status
     {
@@ -73,6 +75,8 @@ public class Generator : MonoBehaviour
         GeneratorFixed:
         Debug.Log("Fix routine completed");
         Status = (true, Status.playerNear, null);
+        onGenFix.onGenFix();
+
     }
 
     private void UpdateProgressBar(float value = 0)
