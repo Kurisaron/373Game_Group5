@@ -121738,6 +121738,7 @@ GameObject:
   - component: {fileID: 1895853689565227882}
   - component: {fileID: 4246186391279025706}
   - component: {fileID: 8034979726887841948}
+  - component: {fileID: 5131585149230296517}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -121805,7 +121806,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressSlider: {fileID: 0}
+  onGenFix: {fileID: 5131585149230296517}
+--- !u!114 &5131585149230296517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7224279666569309237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79a035bcf884dc4496534b188eb5dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   lights: {fileID: 2843547906199743202}
+  pistons:
+  - {fileID: 4852646228786384671}
+  - {fileID: 8536560977408079991}
+  - {fileID: 171635274449006762}
+  - {fileID: 957669509180214946}
+  - {fileID: 7626486034052817307}
+  - {fileID: 1251841475447211112}
+  - {fileID: 5338299571183466318}
+  - {fileID: 1975879712112156910}
+  pistonDiff: 0.5
 --- !u!1 &7328539131956548922
 GameObject:
   m_ObjectHideFlags: 0

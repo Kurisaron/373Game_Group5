@@ -24,7 +24,9 @@ public class OnGenFix : MonoBehaviour
 
     public void onGenFix()
     {
-        lights.SetActive(true);
+        
+        StartCoroutine(lightsOn());
+
         pistons[0 ].enabled = true;
         pistons[4].enabled = true;
         StartCoroutine(PistonPair());
@@ -43,6 +45,39 @@ public class OnGenFix : MonoBehaviour
         yield return new WaitForSeconds(pistonDiff);
         pistons[3].enabled = true;
         pistons[7].enabled = true;
+    }
+
+    IEnumerator lightsOn()
+    {
+        lights.SetActive(true);
+        yield return new WaitForSeconds(.01f);
+        lights.SetActive(false);
+        yield return new WaitForSeconds(.05f);
+        lights.SetActive(true);
+        yield return new WaitForSeconds(.02f);
+        lights.SetActive(false);
+        yield return new WaitForSeconds(.05f);
+        lights.SetActive(true);
+        yield return new WaitForSeconds(.03f);
+        lights.SetActive(false);
+        yield return new WaitForSeconds(.05f);
+        lights.SetActive(true);
+        yield return new WaitForSeconds(.01f);
+        lights.SetActive(false);
+        yield return new WaitForSeconds(.05f);
+        lights.SetActive(true);
+        yield return new WaitForSeconds(.1f);
+        lights.SetActive(false);
+        yield return new WaitForSeconds(.15f);
+        lights.SetActive(true);
+        yield return new WaitForSeconds(.2f);
+        lights.SetActive(false);
+        yield return new WaitForSeconds(.3f);
+        lights.SetActive(true);
+        yield return new WaitForSeconds(.7f);
+        lights.SetActive(false);
+        yield return new WaitForSeconds(.8f);
+        lights.SetActive(true);
     }
 
 }
