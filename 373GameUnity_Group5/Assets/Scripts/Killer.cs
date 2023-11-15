@@ -9,7 +9,9 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent), typeof(Rigidbody))]
 public class Killer : MonoBehaviour
 {
-    
+    [SerializeField] private AudioClip screamClip;
+
+
     private void OnValidate()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -56,7 +58,11 @@ public class Killer : MonoBehaviour
 
         // Make the killer leave the view here
         Vector3 walkingDirection = -Camera.main.transform.right;
-        MoveKiller(transform.position + (walkingDirection * 10.0f));
+        MoveKiller(transform.position + (walkingDirection * 20.0f));
+
+        await WaitForLeftView();
+
+        gameObject.SetActive(false);
 
     }
 
@@ -92,6 +98,19 @@ public class Killer : MonoBehaviour
         {
             await Task.Yield();
         }
+
+        await Task.Delay(1000);
+
+        AudioSource screamSource = new GameObject("Scream").AddComponent<AudioSource>();
+        screamSource.clip = screamClip;
+        screamSource.Play();
+
+        while (screamSource != null && screamSource.isPlaying)
+        {
+            await Task.Yield();
+        }
+
+        if (screamSource != null) Destroy(screamSource.gameObject);
     }
 
     private async Task WaitForClosedHatch(Hatch hatch)
@@ -100,7 +119,14 @@ public class Killer : MonoBehaviour
         {
             await Task.Yield();
         }
+
     }
 
-    
+    private async Task WaitForLeftView()
+    {
+        while (GeometryUtility.TestPlanesAABB(GeometryUtility.CalculateFrustumPlanes(Camera.main), GetComponentInChildren<Collider>().bounds))
+        {
+            await Task.Yield();
+        }
+    }
 }

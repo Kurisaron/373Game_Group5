@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(BoxCollider), typeof(AudioSource))]
+[RequireComponent(typeof(BoxCollider), typeof(AudioSource), typeof(OnGenFix))]
 public class Generator : MonoBehaviour
 {
     [SerializeField] private Slider progressSlider;
@@ -30,6 +30,14 @@ public class Generator : MonoBehaviour
         if (collider == null) return;
 
         collider.isTrigger = true;
+
+        AudioSource source = GetComponent<AudioSource>();
+        if (source == null) return;
+
+        source.loop = true;
+        source.playOnAwake = true;
+
+        onGenFix = GetComponent<OnGenFix>();
     }
 
     private void Awake()
@@ -76,6 +84,7 @@ public class Generator : MonoBehaviour
         Debug.Log("Fix routine completed");
         Status = (true, Status.playerNear, null);
         onGenFix.onGenFix();
+        yield break;
 
     }
 
@@ -85,4 +94,5 @@ public class Generator : MonoBehaviour
 
         progressSlider.value = value;
     }
+
 }

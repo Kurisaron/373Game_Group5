@@ -630,8 +630,9 @@ GameObject:
   m_Component:
   - component: {fileID: 920235207}
   - component: {fileID: 920235209}
-  - component: {fileID: 920235208}
   - component: {fileID: 920235210}
+  - component: {fileID: 920235212}
+  - component: {fileID: 920235211}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -655,20 +656,6 @@ Transform:
   - {fileID: 1533822964}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &920235208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920235206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5c0137f5e130984dbda8ee222d8e720, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  progressSlider: {fileID: 474544354}
-  onGenFix: {fileID: 0}
 --- !u!65 &920235209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -787,6 +774,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &920235211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920235206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c0137f5e130984dbda8ee222d8e720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressSlider: {fileID: 474544354}
+  onGenFix: {fileID: 920235212}
+--- !u!114 &920235212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920235206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79a035bcf884dc4496534b188eb5dd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lights: {fileID: 0}
+  pistons: []
+  pistonDiff: 0.5
 --- !u!1 &986471388
 GameObject:
   m_ObjectHideFlags: 0
