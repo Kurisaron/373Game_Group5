@@ -82,7 +82,7 @@ MonoBehaviour:
   m_RunstepLenghten: 0.7
   m_JumpSpeed: 10
   m_StickToGroundForce: 10
-  m_GravityMultiplier: 4
+  m_GravityMultiplier: 3
   m_MouseLook:
     XSensitivity: 2
     YSensitivity: 2
@@ -184,10 +184,12 @@ MonoBehaviour:
     BobAmount: 0.1
   m_StepInterval: 5
   m_FootstepSounds:
-  - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
-  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
-  m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
-  m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  - {fileID: 8300000, guid: f80bb0956d9d856498ae66a5d2cdb8de, type: 3}
+  - {fileID: 8300000, guid: 00f280b685fb48648be1ae87ae81976a, type: 3}
+  cornWalkAudio1: {fileID: 8300000, guid: 1cc38a867d8af474d807899417e2f43d, type: 3}
+  cornWalkAudio2: {fileID: 8300000, guid: d6793e5729223f54ba965982690e78ac, type: 3}
+  m_JumpSound: {fileID: 8300000, guid: c093a9784e86cd8449ecedf427387478, type: 3}
+  m_LandSound: {fileID: 8300000, guid: b03f033149b37594c995313e2f613816, type: 3}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 0

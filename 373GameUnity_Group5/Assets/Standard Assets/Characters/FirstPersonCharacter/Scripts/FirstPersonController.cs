@@ -26,6 +26,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
         [SerializeField] private float m_StepInterval;
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
+        [SerializeField] private AudioClip cornWalkAudio1;
+        [SerializeField] private AudioClip cornWalkAudio2;
+        private AudioClip dirtWalkAudio1;
+        private AudioClip dirtWalkAudio2;
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
@@ -42,6 +46,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+
+        private void Awake()
+        {
+            dirtWalkAudio1 = m_FootstepSounds[0];
+            dirtWalkAudio2 = m_FootstepSounds[1];
+        }
+
 
         // Use this for initialization
         private void Start()
@@ -255,6 +266,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("cornstalkArea"))
+            {
+                m_FootstepSounds[0] = cornWalkAudio1;
+                m_FootstepSounds[1] = cornWalkAudio2;
+            }
+            
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("cornstalkArea"))
+            {
+                m_FootstepSounds[0] = dirtWalkAudio1;
+                m_FootstepSounds[1] = dirtWalkAudio2;
+            }
+            
         }
     }
 }
