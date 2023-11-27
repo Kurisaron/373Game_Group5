@@ -102,8 +102,12 @@ public class Killer : MonoBehaviour
         await Task.Delay(1000);
 
         AudioSource screamSource = new GameObject("Scream").AddComponent<AudioSource>();
-        screamSource.clip = screamClip;
-        screamSource.Play();
+        if (screamClip != null)
+        {
+            screamSource.clip = screamClip;
+            screamSource.Play();
+        }
+        else Debug.LogWarning("SCREAM!");
 
         while (screamSource != null && screamSource.isPlaying)
         {
