@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80de591e72d582f4392ad4ce099c2651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screamClip: {fileID: 8300000, guid: 6be3e1804e728f84c86c5f28abb44431, type: 3}
 --- !u!195 &6040981234094137413
 NavMeshAgent:
   m_ObjectHideFlags: 0
