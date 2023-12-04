@@ -6,7 +6,10 @@ public class cornStalkScript : MonoBehaviour
 {
 
     [SerializeField] private Animator animationController;
+    [SerializeField] private AnimationClip clip;
+    private GameObject Player;
     [SerializeField] private Transform playerTransform;
+    
 
 
 
@@ -14,13 +17,17 @@ public class cornStalkScript : MonoBehaviour
     void Awake()
     {        
         this.GetComponent<Collider>().isTrigger = true;
+
+
         //animationController.enabled = false;
+        //Player = GameObject.Find("FPSController");
+        //playerTransform = Player.GetComponent<Transform>();
     }
 
     void Update()
     {
         //transform.LookAt(playerTransform);
-        transform.LookAt(new Vector3(playerTransform.position.x, transform.position.y, playerTransform.position.z));
+        //transform.LookAt(new Vector3(playerTransform.position.x, transform.position.y, playerTransform.position.z));
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,6 +39,7 @@ public class cornStalkScript : MonoBehaviour
             //animationController.enabled = true;
             //print("trigger Player Enter");
             animationController.SetBool("Play", true);
+            StartCoroutine(animationPlay());
         }
     }
 
@@ -45,5 +53,13 @@ public class cornStalkScript : MonoBehaviour
             animationController.SetBool("Play", false);
             //animationController.enabled = false;
         }
+    }
+
+    IEnumerator animationPlay()
+    {
+        yield return new WaitForSeconds(.5f);
+        print(clip.length);
+        animationController.SetBool("Play", false);
+        //print("animation Done");
     }
 }
