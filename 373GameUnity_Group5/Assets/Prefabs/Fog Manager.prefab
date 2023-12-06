@@ -53,7 +53,7 @@ MonoBehaviour:
   fogVisualEffect: {fileID: 5702394333706208091}
   fogVisualEffectLine: {fileID: 6185260594530968540}
   fogVisualEffectLine2: {fileID: 7295688748533253402}
-  staterFogTimer: 15
+  staterFogTimer: 100
   playRate: 80
 --- !u!1 &1564202325955354104
 GameObject:

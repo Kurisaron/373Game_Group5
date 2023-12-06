@@ -31,8 +31,8 @@ public class fogManaer : MonoBehaviour
 
     void Update()
     {
-        fogVisualEffectLine.playRate = playRate;
-        fogVisualEffectLine2.playRate = playRate;
+        //fogVisualEffectLine.playRate = playRate;
+        //fogVisualEffectLine2.playRate = playRate;
 
         //print("Particle Count: " + fogVisualEffect.aliveParticleCount);
         if (fogVisualEffect.aliveParticleCount == 0 && delay)
