@@ -68,8 +68,60 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hay Pile
       objectReference: {fileID: 0}
+    - target: {fileID: 7310999093999873211, guid: ad7d4cf6e3bb3be458770743d3637fd3,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5330758
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310999093999873211, guid: ad7d4cf6e3bb3be458770743d3637fd3,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5330758
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310999093999873211, guid: ad7d4cf6e3bb3be458770743d3637fd3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5330758
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310999093999873211, guid: ad7d4cf6e3bb3be458770743d3637fd3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -42
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5482011952358726150, guid: ad7d4cf6e3bb3be458770743d3637fd3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8913700100767061782}
   m_SourcePrefab: {fileID: 100100000, guid: ad7d4cf6e3bb3be458770743d3637fd3, type: 3}
+--- !u!1 &8830739937971963048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5482011952358726150, guid: ad7d4cf6e3bb3be458770743d3637fd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3934197726033813166}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &8913700100767061782
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830739937971963048}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4368982632033275606, guid: ad7d4cf6e3bb3be458770743d3637fd3, type: 3}
